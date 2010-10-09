@@ -5,7 +5,7 @@ from plone.app.portlets.portlets import base
 
 # TODO: If you define any fields for the portlet configuration schema below
 # do not forget to uncomment the following import
-#from zope import schema
+from zope import schema
 from zope.formlib import form
 
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -13,6 +13,8 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 # TODO: If you require i18n translation for any of your schema fields below,
 # uncomment the following to import your package MessageFactory
 from aaolm.portlet.floating import FloatingPortletMessageFactory as _
+
+from Acquisition import aq_inner
 
 
 class IFloatingPortlet(IPortletDataProvider):
@@ -58,8 +60,12 @@ class Assignment(base.Assignment):
     # def __init__(self, some_field=u""):
     #    self.some_field = some_field
 
-    def __init__(self):
-        pass
+    code = ''
+    dom_element = ''
+    
+    def __init__(self, code='', dom_element=''):
+        self.code = code
+        self.dom_element = dom_element
 
     @property
     def title(self):
@@ -79,7 +85,25 @@ class Renderer(base.Renderer):
 
     render = ViewPageTemplateFile('floatingportlet.pt')
 
+    def __init__(self, *args):
+        base.Renderer.__init__(self, *args)
+        context = aq_inner(self.context)
 
+    @property
+    def code(self):
+        """Get the code from the portlet"""
+        data = self.data
+        code = data.code
+        return code 
+
+    @property
+    def dom_element(self):
+        """Get the DOM Element from the portlet"""
+        data = self.data
+        dom_element = data.dom_element
+        return dom_element 
+        
+        
 class AddForm(base.AddForm):
     """Portlet add form.
 
