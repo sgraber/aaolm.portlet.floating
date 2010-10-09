@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<object 
+    name="portal_javascripts" 
+    meta_type="JavaScripts Registry">
+    
+    <javascript  
+        id="jquery.fixedscroll.js"
+        cacheable="True" 
+        compression="safe"
+        conditionalcomment="" 
+        cookable="True" 
+        enabled="False" 
+        expression="" 
+        inline="False"
+        />  
+    
+</object>
+
+
+
