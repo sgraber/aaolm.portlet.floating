@@ -12,7 +12,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 # TODO: If you require i18n translation for any of your schema fields below,
 # uncomment the following to import your package MessageFactory
-#from aaolm.portlet.floating import FloatingPortletMessageFactory as _
+from aaolm.portlet.floating import FloatingPortletMessageFactory as _
 
 
 class IFloatingPortlet(IPortletDataProvider):
@@ -31,6 +31,14 @@ class IFloatingPortlet(IPortletDataProvider):
     # some_field = schema.TextLine(title=_(u"Some field"),
     #                              description=_(u"A field to use"),
     #                              required=True)
+    
+    code = schema.Text(title=_(u"Floating Portlet Code"),
+                       description=_(u"Enter your code that you'd like to have displayed in your portlet in the text field below."),
+                       required=True)
+                       
+    dom_element = schema.TextLine(title=_(u"DOM Element"),
+                                  description=_(u"Enter the DOM ID that you want your portlet to stop at. Note: MUST be an ID and not CLASS"),
+                                  required=False)
 
 
 class Assignment(base.Assignment):
@@ -80,6 +88,9 @@ class AddForm(base.AddForm):
     constructs the assignment that is being added.
     """
     form_fields = form.Fields(IFloatingPortlet)
+    
+    label = _(u"Add Portlet Code")
+    description = _(u"Add your code in the text field below.")
 
     def create(self, data):
         return Assignment(**data)
@@ -107,3 +118,6 @@ class EditForm(base.EditForm):
     zope.formlib which fields to display.
     """
     form_fields = form.Fields(IFloatingPortlet)
+    
+    label = _(u"Add Portlet Code")
+    description = _(u"Add your code in the text field below.")
