@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<portlets>
+
+ <!-- Portlet type registrations -->
+
+ <portlet
+   addview="aaolm.portlet.floating.FloatingPortlet"
+   title="Floating Portlet"
+   description="A portlet that will 'sticky' to the screen as you scroll down the page."
+   />
+
+</portlets>

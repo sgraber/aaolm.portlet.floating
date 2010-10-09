@@ -1,0 +1,36 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="aaolm.portlet.floating">
+
+    <five:registerPackage package="." initialize=".initialize" />
+
+    <genericsetup:registerProfile
+       name="default"
+       title="Floating Portlet"
+       directory="profiles/default"
+       description="A portlet that will 'sticky' to the screen as you scroll down the page."
+       provides="Products.GenericSetup.interfaces.EXTENSION"
+       />
+
+     <!-- Register the portlet -->
+
+     <!-- If the portlet has no configurable parameters, you can remove
+          the EditForm declaration in floatingportlet.py and delete
+          the 'editview' attribute from this statement.
+       -->
+
+     <plone:portlet
+         name="aaolm.portlet.floating.FloatingPortlet"
+         interface=".floatingportlet.IFloatingPortlet"
+         assignment=".floatingportlet.Assignment"
+         view_permission="zope2.View"
+         edit_permission="cmf.ManagePortal"
+         renderer=".floatingportlet.Renderer"
+         addview=".floatingportlet.AddForm"
+         editview=".floatingportlet.EditForm"
+         />
+
+</configure>

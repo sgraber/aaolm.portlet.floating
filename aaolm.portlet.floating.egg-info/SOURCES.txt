@@ -1,0 +1,17 @@
+README.txt
+setup.py
+aaolm/__init__.py
+aaolm.portlet.floating.egg-info/PKG-INFO
+aaolm.portlet.floating.egg-info/SOURCES.txt
+aaolm.portlet.floating.egg-info/dependency_links.txt
+aaolm.portlet.floating.egg-info/entry_points.txt
+aaolm.portlet.floating.egg-info/namespace_packages.txt
+aaolm.portlet.floating.egg-info/not-zip-safe
+aaolm.portlet.floating.egg-info/requires.txt
+aaolm.portlet.floating.egg-info/top_level.txt
+aaolm/portlet/__init__.py
+aaolm/portlet/floating/__init__.py
+aaolm/portlet/floating/floatingportlet.py
+aaolm/portlet/floating/tests/__init__.py
+aaolm/portlet/floating/tests/base.py
+aaolm/portlet/floating/tests/test_portlet.py
