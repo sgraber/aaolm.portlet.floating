@@ -1,20 +1,19 @@
-<dl class="portlet portletFloatingPortlet"
-    i18n:domain="aaolm.portlet.floating">
+<metal:js fill-slot="javascript_head_slot">
+    <script type="text/javascript"
+            tal:content="jq(document).ready(function(){$('#floating').fixedscroll({padding: 20, boundary: '${view/dom_element}'});});">
+            
+        Named must your fear be before banish it you can.
+        
+    </script>
+</metal:js>
 
-    <dt class="portletHeader">
-        <span class="portletTopLeft"></span>
-        Header
-        <span class="portletTopRight"></span>
-    </dt>
+<div id="floating"
+     class="portlet portletFloatingPortlet"
+     i18n:domain="aaolm.portlet.floating"
+     tal:content="structure view/code">
 
-    <dd class="portletItem odd">
-        Body text
-    </dd>
+    Luke: I can’t believe it!
+    Yoda: That is why you fail.
 
-    <dd class="portletFooter">
-        <span class="portletBottomLeft"></span>
-        Footer
-        <span class="portletBottomRight"></span>
-    </dd>
+</div>
 
-</dl>
