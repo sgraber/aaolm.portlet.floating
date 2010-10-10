@@ -2,12 +2,16 @@ Metadata-Version: 1.0
 Name: aaolm.portlet.floating
 Version: 0.1
 Summary: A portlet that will 'sticky' to the screen as you scroll down the page.
-Home-page: http://svn.plone.org/svn/collective/
-Author: UNKNOWN
-Author-email: UNKNOWN
+Home-page: http://github.com/sgraber/
+Author: Shane Graber
+Author-email: sgraber@gmail.com
 License: GPL
-Description: Introduction
-        ============
+Description: # aaolm.portlet.floating
+        
+        This is a simple portlet that will 'stick' to the side of the screen once
+        the browser window has scrolled passed.  You can optionally add a DOM element
+        that the portlet should not scroll passed in case you want it to stop before
+        it reaches the bottom of the screen.
         
         
         
