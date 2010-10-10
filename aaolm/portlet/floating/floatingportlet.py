@@ -101,7 +101,7 @@ class Renderer(base.Renderer):
         """Get the DOM Element from the portlet"""
         data = self.data
         dom_element = data.dom_element
-        return dom_element 
+        return dom_element
         
         
 class AddForm(base.AddForm):
