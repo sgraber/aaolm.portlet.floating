@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<object name="portal_skins" 
+        meta_type="Plone Skins Tool"
+        allow_any="False"
+        cookie_persistence="False"
+        request_varname="plone_skin">
+   
+    <object 
+        name="floating"
+        meta_type="Filesystem Directory View"
+        directory="aaolm.portlet.floating:skins/floating"
+        
+        />
+
+    <skin-path name="*">
+        
+        <layer 
+            name="floating"
+            insert-after="custom"
+            />
+            
+    </skin-path>
+ 
+</object>
