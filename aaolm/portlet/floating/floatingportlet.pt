@@ -1,11 +1,10 @@
-<metal:js fill-slot="javascript_head_slot">
-    <script type="text/javascript"
-            tal:content="jq(document).ready(function(){$('#floating').fixedscroll({padding: 20, boundary: '${view/dom_element}'});});">
-            
-        Named must your fear be before banish it you can.
-        
-    </script>
-</metal:js>
+<tal:js tal:define="js python: '<script type=\'text/javascript\'>jq(document).ready(function(){$(\'#floating\').fixedscroll({padding:20,boundary:\'' + view.dom_element + '\'})})</script>';"
+       tal:content="structure js">
+
+    Named must your fear be before banish it you can.
+
+</tal:js>
+
 
 <div id="floating"
      class="portlet portletFloatingPortlet"
@@ -16,4 +15,3 @@
     Yoda: That is why you fail.
 
 </div>
-
