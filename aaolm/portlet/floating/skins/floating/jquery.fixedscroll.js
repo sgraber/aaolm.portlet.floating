@@ -24,7 +24,7 @@
             
             var defaults = { 
                 padding: 0,
-                boundary: null
+                boundary: '#portal-footer'
             };
             
             var options = $.extend(defaults, options);
