@@ -32,16 +32,13 @@
             return this.each(function() {
                 var o = options;
                 var $this = $(this);
-
+                
                 // explicitly set the width of the parent container otherwise 
                 // image positioning will shift left/right
                 // make sure that the DOM object you've targeted with $(this) has 
                 // an explicit width set on it otherwise this will NOT WORK
                 var left = $this.offset().left;
-                var parentWidth = $this.parent().width();
-                
-                $this.parent().css({'width':parentWidth+'px !important'});
-                  
+ 
                 var msie6 = $.browser == 'msie' && $.browser.version < 7;
 
                 if (!msie6) {
@@ -54,7 +51,7 @@
                     
                     $(window).scroll(function (event) {
                         var y = $(this).scrollTop();    // this is where we are vertically on the page
-                        
+                        // alert("var y");
                         // this is the element we want the item to stop before
                         // moved into the loop in case we're lazy loading images
                         var bottom = 0;
@@ -66,6 +63,7 @@
                         
                         // check to see if we've scrolled and the element is touching the window top
                         if (y >= top) {
+                            // alert("y>=top");
                             // if we've scrolled and are touching, fix the element in place
                             $this.css({'position':'fixed', 'top':o.padding+'px', 'left':left+'px'});
                             
